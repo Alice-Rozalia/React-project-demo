@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.kuro.news.mapper.XinwenMapper">
+
+    <select id="findNewsByBkid" resultType="org.kuro.news.model.entity.Xinwen">
+        SELECT * FROM xinwen WHERE bk_id = #{bid} ORDER BY publish_date LIMIT 6
+    </select>
+
+</mapper>

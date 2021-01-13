@@ -1,0 +1,38 @@
+.container {
+  width: 1000px;
+  margin: 0 auto;
+
+  .news-title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-evenly;
+    height: 60px;
+
+    li {
+      height: 100%;
+      line-height: 60px;
+      padding: 0 12px;
+      cursor: pointer;
+
+      &:hover {
+        border-bottom: 2px solid #31c27c;
+      }
+    }
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+
+    .ant-input {
+      width: 500px;
+    }
+  }
+}
