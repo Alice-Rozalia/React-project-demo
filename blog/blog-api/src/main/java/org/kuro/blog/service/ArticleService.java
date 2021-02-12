@@ -13,4 +13,6 @@ public interface ArticleService {
     List<Article> findArticles(Integer tagId);
 
     Article findArticleById(Integer id);
+
+    void addArticle(Article article, Integer[] ids);
 }

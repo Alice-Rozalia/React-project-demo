@@ -1,6 +1,7 @@
 package org.kuro.blog.service;
 
 import org.kuro.blog.model.entity.Tag;
+import org.kuro.blog.model.response.Result;
 
 import java.util.List;
 
@@ -11,4 +12,10 @@ import java.util.List;
 public interface TagService {
 
     List<Tag> findAllTags();
+
+    void addTag(Tag tag);
+
+    void updateTag(Tag tag);
+
+    Result deleteTag(Integer tagId);
 }

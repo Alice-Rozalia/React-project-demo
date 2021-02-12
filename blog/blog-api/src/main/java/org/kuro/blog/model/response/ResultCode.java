@@ -8,17 +8,15 @@ public enum ResultCode implements CustomizeResultCode {
     /* 成功 */
     SUCCESS(200, "请求成功！"),
     LOGIN_SUCCESS(201, "登录成功！"),
+    LOGIN_EXPIRE(201, "登录过期，请重新登录！"),
 
     /* 默认失败 */
     COMMON_FAIL(999, "请求失败！"),
 
-    /* 参数错误：1000～1999 */
-    PARAM_NOT_VALID(1001, "参数无效！"),
-    PARAM_IS_BLANK(1002, "参数为空！"),
-    PARAM_TYPE_ERROR(1003, "参数类型错误！"),
-    PARAM_NOT_COMPLETE(1004, "参数缺失！"),
+    LOGIN_FAIL(2003, "用户名或密码错误！"),
 
     ARTICLE_NOT_EXIST(2001, "该篇文章不存在！"),
+    TAG_IN_USE(2002, "该标签仍在使用中！"),
 
     /* 业务错误 */
     NO_PERMISSION(3001, "权限不足！"),

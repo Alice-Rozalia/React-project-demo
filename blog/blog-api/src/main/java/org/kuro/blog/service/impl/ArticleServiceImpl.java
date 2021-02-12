@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -40,5 +41,17 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public Article findArticleById(Integer id) {
         return articleMapper.findArticleById(id);
+    }
+
+    @Override
+    public void addArticle(Article article, Integer[] ids) {
+        article.setCreateTime(new Date());
+        articleMapper.insertSelective(article);
+        for (int i = 0; i < ids.length; i++) {
+            ArticleTag tag = new ArticleTag();
+            tag.setTagId(ids[i]);
+            tag.setArticleId(article.getId());
+            articleTagMapper.insertSelective(tag);
+        }
     }
 }

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,6 +20,7 @@ import java.util.List;
 @Data
 @ApiModel(value="Article对象", description="文章表")
 @Table(name = "tb_article")
+@ToString
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

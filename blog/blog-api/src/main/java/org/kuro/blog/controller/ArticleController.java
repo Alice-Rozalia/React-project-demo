@@ -40,4 +40,11 @@ public class ArticleController {
         Article article = articleService.findArticleById(articleId);
         return Result.ok().data("article", article);
     }
+
+    @PostMapping("/pri/article")
+    @ApiOperation(value = "添加文章", notes = "添加文章")
+    public Result addArticle(@RequestBody Article article, Integer[] ids) {
+        articleService.addArticle(article, ids);
+        return Result.ok(ResultCode.ADD_SUCCESS);
+    }
 }

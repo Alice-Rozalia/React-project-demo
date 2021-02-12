@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
  * @Author: 白鸟亦悲否？
@@ -16,7 +17,7 @@ import javax.persistence.Table;
 @Data
 @ApiModel(value="Tag对象", description="标签表")
 @Table(name = "tb_tag")
-public class Tag {
+public class Tag implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
